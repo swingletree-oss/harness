@@ -1,0 +1,26 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+    - "master"
+
+jobs:
+  release:
+    container:
+      image: node:10-alpine
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Git
+      run: apk add git
+    - name: Initialize
+      run: npm i
+    - name: Run tests
+      run: npm test
+    - name: Release Codebase
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_PACKAGE_SECRET }}
+        NPM_TOKEN: ${{ secrets.GITHUB_PACKAGE_SECRET }}
+      run: npm run release
