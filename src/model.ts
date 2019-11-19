@@ -90,6 +90,8 @@ export namespace Harness {
     checkStatus?: Harness.Conclusion;
     /** annotations of the report */
     annotations?: Harness.Annotation[];
+    /** unique id of the build, which spans over a number of AnalysisReports */
+    uuid?: string;
     /** timestamp of the report */
     timestamp?: Date;
   }
