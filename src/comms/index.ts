@@ -30,7 +30,7 @@ export class EventBusFailure extends Error {
 export class BadRequestError extends Error {
   constructor(detail: string) {
     super(
-      "Bad Reguest",
+      "Bad Request",
       String(detail),
       400
     );
