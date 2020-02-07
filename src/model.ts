@@ -138,7 +138,7 @@ export namespace Harness {
     }
 
     public isDataComplete(): boolean {
-      return !!this.repo && !!this.repo && !!this.sha && !!this.branch && !!this.owner;
+      return !!this.repo && !!this.sha && !!this.branch && !!this.owner;
     }
 
     constructor() {
