@@ -1,7 +1,9 @@
+import { injectable } from "inversify";
 import * as yaml from "js-yaml";
 import { LOGGER } from "./logger";
 import * as nconf from "nconf";
 
+@injectable()
 export class Configuration {
   private config: nconf.Provider;
 
