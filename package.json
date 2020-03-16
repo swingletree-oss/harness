@@ -18,11 +18,15 @@
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
+    "js-yaml": "^3.13.1",
+    "nconf": "^0.10.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
     "@semantic-release/npm": "^5.3.4",
+    "@types/js-yaml": "^3.12.2",
     "@types/mocha": "^5.2.7",
+    "@types/nconf": "^0.10.0",
     "@types/node": "^12.12.11",
     "@types/sinon": "^7.5.0",
     "chai": "^4.2.0",
