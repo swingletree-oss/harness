@@ -23,7 +23,10 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/github": "^7.0.5",
+    "@semantic-release/npm": "^5.3.5",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "@types/js-yaml": "^3.12.3",
     "@types/mocha": "^5.2.7",
     "@types/nconf": "^0.10.0",
