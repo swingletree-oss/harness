@@ -100,7 +100,6 @@ export namespace Harness {
     type: ScmType;
 
     abstract toRefString(): string;
-    abstract isDataComplete(): boolean;
 
     constructor(type: ScmType) {
       this.type = type;
@@ -117,12 +116,17 @@ export namespace Harness {
       return `${this.repo}@${this.sha}`;
     }
 
-    public isDataComplete(): boolean {
-      return !!this.repo && !!this.sha && !!this.branch;
+    public static isDataComplete(check: GitSource): boolean {
+      return !!check?.repo && !!check?.sha && !!check?.branch;
     }
 
-    constructor() {
+    constructor(copy?: GitSource) {
       super(ScmType.GIT);
+
+      this.remote = copy?.remote;
+      this.repo = copy?.repo;
+      this.sha = copy?.sha;
+      this.branch = copy?.branch;
     }
   }
 
@@ -137,12 +141,18 @@ export namespace Harness {
       return `${this.owner}/${this.repo}@${this.sha}`;
     }
 
-    public isDataComplete(): boolean {
-      return !!this.repo && !!this.sha && !!this.branch && !!this.owner;
+    public static isDataComplete(check: GithubSource): boolean {
+      return !!check?.repo && !!check?.sha && !!check?.branch && !!check?.owner;
     }
 
-    constructor() {
+    constructor(copy?: GithubSource) {
       super(ScmType.GITHUB);
+
+      this.remote = copy?.remote;
+      this.owner = copy?.owner;
+      this.repo = copy?.repo;
+      this.sha = copy?.sha;
+      this.branch = copy?.branch;
     }
   }
 

@@ -29,7 +29,7 @@ describe("Harness Scm Classes", () => {
 
       uut[prop] = undefined;
 
-      expect(uut.isDataComplete()).to.be.false;
+      expect(Harness.GithubSource.isDataComplete(uut)).to.be.false;
     });
   });
 
@@ -42,7 +42,7 @@ describe("Harness Scm Classes", () => {
      } as Harness.GithubSource
     );
 
-    expect(uut.isDataComplete()).to.be.true;
+    expect(Harness.GithubSource.isDataComplete(uut)).to.be.true;
   });
 
 });
