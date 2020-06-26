@@ -1,3 +1,5 @@
+import { randomBytes } from "crypto";
+
 export namespace Harness {
   export enum Severity {
     BLOCKER = "blocker",
@@ -171,7 +173,8 @@ export namespace Harness {
     yoke?: any;
 
     constructor(rawConfig: RawRepositoryConfig) {
-      Object.assign(this, rawConfig);
+      this.plugin = rawConfig.plugin;
+      this.yoke = rawConfig.yoke;
     }
 
     public hasPluginConfig(pluginId: string): boolean {
