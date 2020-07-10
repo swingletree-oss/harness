@@ -16,37 +16,60 @@
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "release": "semantic-release"
   },
+  "mocha": {
+    "diff": true,
+    "extension": [
+      "ts"
+    ],
+    "package": "./package.json",
+    "reporter": "spec",
+    "slow": 75,
+    "timeout": 2000,
+    "ui": "bdd",
+    "watch-files": [
+      "src/**/*.ts",
+      "test/**/*.spec.ts"
+    ],
+    "watch-ignore": [
+      "lib/vendor"
+    ],
+    "recursive": true,
+    "require": [
+      "./test/mocha.env.js"
+    ]
+  },
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^3.14.0",
     "nconf": "^0.10.0",
-    "winston": "^3.2.1"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/github": "^7.0.5",
-    "@semantic-release/npm": "^5.3.5",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/npm": "^7.0.5",
     "@semantic-release/release-notes-generator": "^9.0.1",
-    "@types/js-yaml": "^3.12.3",
-    "@types/mocha": "^5.2.7",
+    "@types/js-yaml": "^3.12.5",
+    "@types/mocha": "^7.0.2",
     "@types/nconf": "^0.10.0",
-    "@types/node": "^12.12.34",
-    "@types/sinon": "^7.5.2",
+    "@types/node": "^14.0.20",
+    "@types/sinon": "^9.0.4",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-things": "^0.2.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.4.0",
     "inversify": "^5.0.1",
-    "mocha": "^6.2.3",
+    "mocha": "^8.0.1",
     "mockserver": "^3.1.1",
-    "nodemon": "^1.19.4",
-    "semantic-release": "^15.14.0",
-    "sinon": "^7.5.0",
+    "nodemon": "^2.0.4",
+    "npm-check-updates": "^7.0.1",
+    "semantic-release": "^17.1.1",
+    "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
     "sinon-express-mock": "^2.2.1",
-    "ts-mocha": "^6.0.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.8.3"
+    "ts-mocha": "^7.0.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6"
   },
   "license": "GPL-3.0",
   "private": false,
