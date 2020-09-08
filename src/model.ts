@@ -173,8 +173,10 @@ export namespace Harness {
     yoke?: any;
 
     constructor(rawConfig: RawRepositoryConfig) {
-      this.plugin = rawConfig.plugin;
-      this.yoke = rawConfig.yoke;
+      if (rawConfig) {
+        this.plugin = rawConfig.plugin;
+        this.yoke = rawConfig.yoke;
+      }
     }
 
     public hasPluginConfig(pluginId: string): boolean {
