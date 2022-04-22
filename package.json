@@ -41,7 +41,7 @@
   "types": "./dist/index.d.ts",
   "dependencies": {
     "js-yaml": "^3.14.0",
-    "nconf": "^0.11.2",
+    "nconf": "^0.11.4",
     "winston": "^3.3.3"
   },
   "devDependencies": {
